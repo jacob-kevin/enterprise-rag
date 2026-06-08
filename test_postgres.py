@@ -1,5 +1,6 @@
 import psycopg2
 import os
+
 from dotenv import load_dotenv
 load_dotenv()
 POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")

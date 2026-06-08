@@ -133,9 +133,12 @@ Salary: {salary}
     )
  
     embedding = embedding_response.data[0].embedding
+   #commented
+    '''
     print(f"Embedding Length = {len(embedding)}")
     print(embedding[:5])
- 
+    '''
+
     document = {
         "id": str(employee_id),
         "employee_id": str(employee_id),
