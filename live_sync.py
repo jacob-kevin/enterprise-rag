@@ -23,7 +23,7 @@ aoai_client = AzureOpenAI(
 
 search_client = SearchClient(
     endpoint=os.getenv("SEARCH_ENDPOINT"),
-    index_name="employee_idx",
+    index_name=os.getenv("INDEX_NAME_SQL"),
     credential=AzureKeyCredential(
         os.getenv("SEARCH_KEY")
     )
