@@ -1,0 +1,44 @@
+openapi: 3.0.1
+
+info:
+  title: Memory Byters Router API
+  description: Routes queries to the appropriate Foundry Agent.
+  version: 1.0.0
+
+servers:
+  - url: https://rag-ltm-function-bybkhshtavegd0gx.canadacentral-01.azurewebsites.net
+
+paths:
+  /api/ask:
+    post:
+      operationId: AskRouter
+      summary: Route user query
+      description: Routes query to the appropriate AI agent and returns response.
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - query
+              properties:
+                query:
+                  type: string
+                  description: User query
+
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  classification:
+                    type: string
+                  agent:
+                    type: string
+                  answer:
+                    type: string

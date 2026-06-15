@@ -36,36 +36,36 @@ def classify_query(query: str) -> str:
     response = client.responses.create(
         model="gpt-5-mini",
         input=f"""
-                You are a query complexity classifier.
+You are a query complexity classifier.
 
-                Classify the user query as either:
+Classify the user query as either:
 
-                SIMPLE
-                - Single lookup
-                - Single fact retrieval
-                - Basic summarization
+SIMPLE
+- Single lookup
+- Single fact retrieval
+- Basic summarization
 
-                COMPLEX
-                - Requires analysis
-                - Requires comparison
-                - Requires reasoning
-                - Requires combining multiple sources
-                - Requires decomposition
-                - Cross-document reasoning
-                - Cross-index reasoning
-                - Multi-step investigation
+COMPLEX
+- Requires analysis
+- Requires comparison
+- Requires reasoning
+- Requires combining multiple sources
+- Requires decomposition
+- Cross-document reasoning
+- Cross-index reasoning
+- Multi-step investigation
 
-                Return ONLY:
+Return ONLY:
 
-                SIMPLE
+SIMPLE
 
-                or
+or
 
-                COMPLEX
+COMPLEX
 
-                Query:
-                {query}
-                """
+Query:
+{query}
+"""
     )
 
     return response.output_text.strip()
