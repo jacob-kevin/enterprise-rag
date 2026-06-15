@@ -13,7 +13,7 @@ load_dotenv()
 
 SEARCH_ENDPOINT = os.getenv("SEARCH_ENDPOINT")
 SEARCH_KEY = os.getenv("SEARCH_KEY")
-INDEX_NAME = os.getenv("INDEX_NAME")
+INDEX_NAME = os.getenv("INDEX_NAME_PDF")
 
 OPENAI_ENDPOINT = os.getenv("OPENAI_ENDPOINT")
 OPENAI_KEY = os.getenv("OPENAI_KEY")
